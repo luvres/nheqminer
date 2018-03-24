@@ -1,4 +1,4 @@
-## Nheqminer CPU whit Ubuntu
+## Nheqminer CPU whit Ubuntu 
 -----
 
 ### Run
