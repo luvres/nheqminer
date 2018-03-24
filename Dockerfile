@@ -12,10 +12,9 @@ ENV \
 
 RUN \
 	apt-get update \
-	&& cp nheqminer_cpu /usr/bin \
-	&& apt-get install -y libboost-system1.58.0 libboost-log1.58.0 \
-  \
-	&& cp nheqminer_cpu /usr/bin
+	&& apt-get install -y libboost-system1.58.0 libboost-log1.58.0
+
+COPY nheqminer_cpu /usr/bin
 
 CMD nheqminer_cpu -l $POOL:$PORT -u $USER -t $CORES
 
