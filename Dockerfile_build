@@ -1,0 +1,20 @@
+FROM ubuntu:xenial
+MAINTAINER Leonardo Loures <luvres@hotmail.com>
+
+## References:
+# https://www.youtube.com/watch?v=iU5CzyyBfhY
+
+RUN \
+	cd \
+	&& apt-get update \
+	&& apt-get install -y git cmake build-essential libboost-all-dev \
+  \
+	&& git clone -b Linux https://github.com/nicehash/nheqminer.git \
+	&& cd nheqminer/cpu_xenoncat/Linux/asm \
+	&& sh assemble.sh \
+	&& cd ../../../Linux_cmake/nheqminer_cpu \
+	&& cmake . \
+	&& make -j $(nproc) \
+  \
+	&& cp nheqminer_cpu /usr/bin
+
