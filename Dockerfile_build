@@ -14,7 +14,5 @@ RUN \
 	&& sh assemble.sh \
 	&& cd ../../../Linux_cmake/nheqminer_cpu \
 	&& cmake . \
-	&& make -j $(nproc) \
-  \
-	&& cp nheqminer_cpu /usr/bin
+	&& make -j $(nproc)
 
